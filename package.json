@@ -1,0 +1,8 @@
+{
+  "name": "asset-cachebuster",
+  "author": "Pedro Borges <oi@pedroborg.es>",
+  "version": "1.0.0",
+  "description": "Kirby Asset Cachebuster",
+  "type": "kirby-plugin",
+  "license": "MIT"
+}
