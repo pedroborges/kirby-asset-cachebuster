@@ -19,6 +19,28 @@ Asset Cachebuster will generate a versioned URL that looks like:
     <link rel="stylesheet" href="https://yoursite.com/assets/css/main.1511146146.css">
 ```
 
+### Apache `.htaccess` rules
+
+To make this plugin work on Apache you must add the following lines to your 
+`.htaccess` file:
+
+```
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)\.(\d+)\.(css|js)$ $1.$3 [L]
+```
+
+Place them directly after the `RewriteBase` definition.
+
+### Nginx rules
+
+For Nginx you can add the following to your virtual host setup:
+
+```
+location ~ (.+)\.(?:\d+)\.(js|css)$ {
+    try_files $uri $1.$2;
+}
+```
+
 ### Download
 [Download the files](https://github.com/pedroborges/kirby-asset-cachebuster/archive/master.zip) and place them inside `site/plugins/asset-cachebuster`.
 
