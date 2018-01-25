@@ -17,7 +17,7 @@ if (! function_exists('asset')) {
      * @param  string  $path
      * @return string
      */
-    function asset(string $path) {
+    function asset($path) {
         if (! c::get('cachebuster')) return url($path);
 
         $file = kirby()->roots()->index().DS.$path;
